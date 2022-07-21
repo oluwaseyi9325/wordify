@@ -50,7 +50,20 @@ function NavBar() {
               </ul>
                 </li>
 
-                <li className="nav-item listMargin ml-5"  ><Link href="/contact" className="nav-link" style={{color:'#2d3e50'}}><a id='listMargin'>ABOUT</a></Link></li>
+               
+
+                   
+
+                <li className="nav-item listMargin dropdown show ml-5"  ><a id='listMargin dropdownMenuLink' className='dropdown-toggle' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ABOUT</a>
+                
+                
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <li><a class="dropdown-item" href="#"> Submenu item 1</a></li>
+                <li><a class="dropdown-item" href="#"> Submenu item 2 </a></li>
+                <li><a class="dropdown-item" href="#"> Submenu item 3 </a></li>
+              </ul>
+            
+                </li>
 
                 <li className="nav-item listMargin ml-5"  ><Link href="/" className="nav-link" style={{color:'#2d3e50'}}><a id='listMargin'>HELP</a></Link></li>
 

@@ -5,6 +5,7 @@ import NavBar from '../Component/NavBar'
 import Footer from '../Component/Footer'
 import Carousel from '../Component/Carousel'
 import React, { useState,useEffect } from 'react'
+import NewsFeed from '../Component/NewsFeed'
 
 export default function Home() {
   
@@ -28,6 +29,13 @@ export default function Home() {
                   <section className='mb-5 mt-5'>
 
                   <Carousel />
+
+                  </section>
+
+
+                  <section className='container'>
+
+                    <NewsFeed />
 
                   </section>
 
