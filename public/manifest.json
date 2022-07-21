@@ -1,8 +1,8 @@
 {
   "name": "Wordify",
-  "short_name": "Next PWA",
+  "short_name": "Wordify",
   "theme_color": "#ffffff",
-  "background_color": "#004740",
+  "background_color": "lightgrey",
   "display": "fullscreen",
   "orientation": "portrait",
   "scope": "/",

@@ -8,7 +8,7 @@ function HeaderSection() {
     <div className=' row py-3 m-auto'>
 
     <div className='col-lg-6  col-sm-7 m-auto'>
-     <div className='container ml-3'>
+     <div className='container '>
       <div className='container social-icon ' >
      
       <span className=''> <i className='bi bi-twitter'></i></span>
@@ -24,8 +24,8 @@ function HeaderSection() {
      </div>
     </div>
 
-    <div className='col-lg-6  col-sm-7 m-auto '>
-    <div  className="input-group search-col pr-3 ">
+    <div className='col-lg-6  col-sm-7 m-auto'>
+    <div  className="input-group search-col">
     <input type="email" placeholder="Enter Your Mail" name="email" className='form-control search-input py-3 pl-5' />
     <div className='input-group-append'>
     <i className='bi bi-search btn text-light' style={{backgroundColor:'#510BC4'}}></i>

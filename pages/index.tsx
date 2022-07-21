@@ -4,14 +4,14 @@ import HeaderSection from '../Component/Header'
 import NavBar from '../Component/NavBar'
 import Footer from '../Component/Footer'
 import Carousel from '../Component/Carousel'
-import { useState,useEffect } from 'react'
+import React, { useState,useEffect } from 'react'
 
 export default function Home() {
   
   
   
   return (
-    <div>
+    <React.Fragment>
 
   <HeaderSection />
 
@@ -24,8 +24,7 @@ export default function Home() {
       <div className='colomn sticky-top '>
           <NavBar />
       </div>
-                <hr className='container text-center ' />
- 
+              <div className='mt-4 container' style={{borderBottom:'1px solid lightgrey'}}></div>
                   <section className='mb-5 mt-5'>
 
                   <Carousel />
@@ -35,6 +34,6 @@ export default function Home() {
        
     <Footer/>   
      
-    </div>
+    </React.Fragment>
   )
 }
