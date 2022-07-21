@@ -5,11 +5,11 @@ function HeaderSection() {
   return (
     <header className='container-fluid ' style={{backgroundColor:'#6610F2'}}>
 
-    <div className=' row py-3 m-auto'>
+    <div className=' row py-2 '>
 
     <div className='col-lg-6  col-sm-7 m-auto'>
      <div className='container '>
-      <div className='container social-icon ' >
+      <div className=' social-icon ' >
      
       <span className=''> <i className='bi bi-twitter'></i></span>
        

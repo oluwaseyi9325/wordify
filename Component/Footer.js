@@ -6,19 +6,19 @@ function Footer() {
   return (
     <div>
     
-    <footer className='pt-4 pb-3' style={{backgroundColor:'black'}} >
+    <footer className=' pb-3' style={{backgroundColor:'black'}} >
 
     <section className='container'>
      <div className=' row'>
 
-     <div className='col-lg-3 col-md-4'>
+     <div className='col-lg-3 col-md-4 pt-4'>
      <h4 className='text-light'>About Us</h4>
      <p className='text-muted'>
       We are NEWS-Blog company, ready to provide Latest trends and World news in all aspect-- Entertainment , Sport , Politics , Animal Wide . etc
      </p>
      </div>
 
-     <div className='col-lg-3 col-md-4'>
+     <div className='col-lg-3 col-md-4 pt-4'>
       <h4 className='text-light'>Newsletter</h4>
       <p className='text-muted'>
       Stay update with our latest
@@ -36,7 +36,7 @@ function Footer() {
       </div>
      </div>
 
-     <div className='col-lg-3 col-md-4 '>
+     <div className='col-lg-3 col-md-4 pt-4'>
      <h4 className='text-light'>Twitter Trends</h4>
 
      <div>
@@ -45,7 +45,7 @@ function Footer() {
      
      </div>
 
-     <div className='col-lg-3 col-md-4 '>
+     <div className='col-lg-3 col-md-4 pt-4'>
      <h4 className='text-light'>Follow Us</h4>
      <p className='text-muted'>Let us be social</p>
      <div style={{letterSpacing:'30px'}}>
