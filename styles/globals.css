@@ -93,9 +93,14 @@ a {
   .nav-background{
     background-color:whitesmoke;
   }
+  #nav-all{
+    background-color:lightgrey;
+   box-shadow: 5px 2px 5px 5px grey;
+  }
 }
 #nav-all{
   align-items: center;
+ 
 }
 .search-input{
    border: 0px solid white !important;

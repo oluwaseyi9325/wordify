@@ -6,13 +6,13 @@ function Carousel() {
     
     <div class="container" >
     <div id="carousel-all" class="carousel carousel-fade  slide " data-ride="carousel">
-        <ol class="carousel-indicators text-light" style={{listStyleType:'circle',fontSize:'24px'}}>
+       {/* <ol class="carousel-indicators text-light" style={{listStyleType:'circle',fontSize:'24px'}}>
             <li data-target="#carousel-all" class="active" data-slide-to="0"> </li>
             <li data-target="#carousel-all"  data-slide-to="1"> </li>
             <li data-target="#carousel-all" data-slide-to="2"> </li>
            
            
-        </ol>
+  </ol>*/}
 
         <div class="carousel-inner">
           <div className='carousel-item active text-center p-4 bg-info carol-1 animate__animated animate__fadeInDown'>
@@ -64,8 +64,8 @@ function Carousel() {
            
            
         </div>
-        <a href="#carousel-all" class="carousel-control-prev" data-slide="prev"><span class="carousel-control-prev-icon"></span></a>
-        <a href="#carousel-all" class="carousel-control-next" data-slide="next"><span class="carousel-control-next-icon"></span></a>
+       {/* <a href="#carousel-all" class="carousel-control-prev" data-slide="prev"><span class="carousel-control-prev-icon"></span></a>
+  <a href="#carousel-all" class="carousel-control-next" data-slide="next"><span class="carousel-control-next-icon"></span></a>*/}
     </div>
 </div> 
 
