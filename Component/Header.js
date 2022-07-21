@@ -26,7 +26,7 @@ function HeaderSection() {
 
     <div className='col-lg-6  col-sm-7 m-auto'>
     <div  className="input-group search-col">
-    <input type="email" placeholder="Enter Your Mail" name="email" className='form-control search-input py-3 pl-5' />
+    <input type="email" placeholder="Type Keyword to search..." name="email" className='form-control search-input py-3 pl-5' />
     <div className='input-group-append'>
     <i className='bi bi-search btn text-light' style={{backgroundColor:'#510BC4'}}></i>
   
