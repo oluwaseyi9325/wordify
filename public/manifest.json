@@ -3,7 +3,7 @@
   "background_color": "grey",
   "display": "standalone",
   "scope": "/",
-  "start_url": "newsimefy.vercel.app",
+  "start_url": "/",
   "name": "Newsimefy",
   "short_name": "Newsimefy",
   "description": "Newsimefy:Blog site with NEXT js",
