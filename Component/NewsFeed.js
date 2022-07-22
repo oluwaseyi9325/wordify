@@ -3,6 +3,7 @@ import Image from 'next/image';
 import instag from '/aseet/img1.jpg'
 import int from '/aseet/img2.jpg'
 import inst from '/aseet/img3.jpg'
+import Link from 'next/link';
 function NewsFeed() {
   return (
       <div className='mb-5'>
@@ -11,7 +12,7 @@ function NewsFeed() {
      <div className='row ml-'>
 
 
-     <div className='col-lg-3 col-md-6 col-sm-4 mt-3 '>
+     <div className='col-lg-3 col-md-6 col-sm-6 mt-3 '>
      <div class="card shadow card-width">
     
      <Image  class="card-img-top" src={inst} alt='card img' width={200} height={160} />
@@ -36,16 +37,18 @@ function NewsFeed() {
      </div>
     
      <div class="card-body mt-1">
-       <h5 class="card-title">Card title</h5>
-       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-       <a href="#" class="btn btn-primary">Go somewhere</a>
+       <h5 class="card-title">Sport</h5>
+       <p class="card-text ">
+          <Link href='/'><a>BREAKING: Nigerian Women Team, Super Falcons Boycotts Training Over Unpaid Bonuses Ahead Of ....</a></Link>
+       </p>
+       <a href="#" class="btn btn-primary btn-sm">Read More...</a>
      </div>
     
    </div>
      </div>
 
 
-     <div className='col-lg-3 col-md-6 col-sm-4 mt-3 '>
+     <div className='col-lg-3 col-md-6 col-sm-6 mt-3 '>
      <div class="card shadow card-width">
     
      <Image  class="card-img-top" src={instag} alt='card img' width={200} height={160} />
@@ -79,7 +82,7 @@ function NewsFeed() {
      </div>
 
 
-     <div className='col-lg-3 col-md-6 col-sm-4 mt-3 '>
+     <div className='col-lg-3 col-md-6 col-sm-6 mt-3 '>
      <div class="card shadow card-width">
     
      <Image  class="card-img-top" src={instag} alt='card img' width={200} height={160} />
@@ -114,7 +117,7 @@ function NewsFeed() {
 
 
 
-     <div className='col-lg-3 col-md-6 col-sm-4 mt-3 '>
+     <div className='col-lg-3 col-md-6 col-sm-6 mt-3 '>
      <div class="card shadow card-width">
     
      <Image  class="card-img-top" src={int} alt='card img' width={200} height={160} />
