@@ -1,12 +1,12 @@
 {
   "theme_color": "grey",
-  "background_color": "#f69435",
+  "background_color": "grey",
   "display": "standalone",
   "scope": "/",
-  "start_url": "Newsimefy.vercel.app",
+  "start_url": "newsimefy.vercel.app",
   "name": "Newsimefy",
   "short_name": "Newsimefy",
-  "description": "Blog site with NEXT js",
+  "description": "Newsimefy:Blog site with NEXT js",
   "icons": [
     {
       "src": "/icon-192x192.png",
