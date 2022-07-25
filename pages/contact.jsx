@@ -49,7 +49,7 @@ function contact() {
 
       <div style={{ height: "100px" }}></div>
 
-      <Footer />
+    
     </React.Fragment>
   );
 }

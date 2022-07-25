@@ -23,7 +23,7 @@ function NavBar() {
   //     setShad('shadow')
   //   }
   return (
-    <nav class="navbar navbar-expand-md navbar-dark " id="nav-all">
+    <nav className="navbar navbar-expand-md navbar-dark " id="nav-all">
       <i
         style={{ fontSize: "50px", color: "black" }}
         className="navbar-toggler bi bi-list"
@@ -33,91 +33,55 @@ function NavBar() {
       <h2 className=" d-md-block d-lg-none blog-name-res">Newsimefy</h2>
 
       <div
-        class="collapse navbar-collapse justify-content-center  "
+        className="collapse navbar-collapse justify-content-center  "
         id="royalnav"
       >
-        <ul class="navbar-nav  nav-background pl-4 pt-4 pr-5 pb-2 animate__animated animate__fadeInDown shadow ">
-          <li id={getRoute === "/" ? "navText" : ""} className="nav-item  ml-5">
+        <ul className="navbar-nav  nav-background pl-4  pr-5 pb-3 animate__animated animate__fadeInDown shadow ">
+          <li id={getRoute === "/" ? "navText" : ""} className="nav-item  ml-5 mt-4">
             <Link href="/" id=" listMargin">
               <a id="listMargin">HOME</a>
             </Link>
           </li>
 
-          <li
-            id={getRoute === "" ? "navText" : ""}
-            className="nav-item ml-5 dropdown"
-          >
-            <Link
-              href=""
-              className="nav-link  dropdown-toggle"
-              style={{ color: "#2d3e50" }}
-            >
-              <a id="listMargin">CATEGORY</a>
-            </Link>
-            <ul class="dropdown-menu">
-              <li>
-                <a class="dropdown-item" href="#">
-                  {" "}
-                  Submenu item 1
-                </a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="#">
-                  {" "}
-                  Submenu item 2{" "}
-                </a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="#">
-                  {" "}
-                  Submenu item 3{" "}
-                </a>
-              </li>
-            </ul>
-          </li>
+         
 
-          <li className="nav-item listMargin dropdown show ml-5">
+          <li  id={getRoute === ( "/category/sport"|| "/category/politics"|| "/category/education") ? "navText" : ""} className="nav-item listMargin dropdown show ml-5 mt-4" style={{cursor:'pointer'}}>
             <a
+           
               id="listMargin dropdownMenuLink"
               className="dropdown-toggle"
               data-toggle="dropdown"
               aria-haspopup="true"
               aria-expanded="false"
+              style={{color:"#676767"}}
             >
-              ABOUT
+             CATEGORY
             </a>
 
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <li>
-                <a class="dropdown-item" href="#">
-                  {" "}
-                  Submenu item 1
-                </a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="#">
-                  {" "}
-                  Submenu item 2{" "}
-                </a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="#">
-                  {" "}
-                  Submenu item 3{" "}
-                </a>
-              </li>
+            <ul id="dropdownBorder" className="dropdown-menu  shadow animate__animated animate__fadeInDown" aria-labelledby="dropdownMenuLink">
+            <li id="dropdownItem" className="dropdown-item">
+            <Link href="/category/Sport" >
+              <a >Sport</a>
+            </Link>
+          </li> 
+              <li id="dropdownItem" className="dropdown-item">
+              <Link href="/category/politics" >
+                <a >Politics</a>
+              </Link>
+            </li>
+            <li id="" className="dropdown-item">
+            <Link href="/category/education" >
+              <a >Education</a>
+            </Link>
+          </li>
             </ul>
           </li>
 
-          <li className="nav-item listMargin ml-5">
-            <Link href="/" className="nav-link" style={{ color: "#2d3e50" }}>
-              <a id="listMargin">HELP</a>
-            </Link>
-          </li>
+         
 
           <li
             id={getRoute === "/contact" ? "navText" : ""}
-            className="nav-item ml-5"
+            className="nav-item ml-5 mt-4"
           >
             <Link
               href="/contact"
@@ -127,6 +91,19 @@ function NavBar() {
               <a id="listMargin">CONTACT</a>
             </Link>
           </li>
+
+          <li
+         
+          className="nav-item ml-5 mt-4"
+        >
+          <Link
+            href="#?"
+            className="nav-link"
+            style={{ color: "#2d3e50" }}
+          >
+            <a id="listMargin">ABOUT</a>
+          </Link>
+        </li>
         </ul>
       </div>
     </nav>

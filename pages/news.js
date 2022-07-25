@@ -7,18 +7,21 @@ import instag from '../aseet/img1.jpg'
 // import  from 'react'
 // import ReactReadMoreReadLess from "react-read-more-read-less";
 import ReadMoreAndLess from 'react-read-more-less';
+import NewsFeedHeader from '../Component/NewsFeedHeader'
+import RelatedNews from '../Component/RelatedNews'
+import NewsComments from '../Component/NewsComments'
+import axios from 'axios'
 
-function news() {
-    const [para,setPar]=useState("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mi ipsum faucibus vitae aliquet nec. Facilisis sed odio morbi quis. In eu mi bibendum neque egestas congue quisque egestas. Ultricies lacus sed turpis tincidunt id aliquet risus feugiat in. Rutrum tellus pellentesque eu tincidunt tortor aliquam nulla. Id velit ut tortor pretium viverra suspendisse. Massa eget egestas purus viverra accumsan in nisl nisi scelerisque. Massa tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada proin. Eget duis at tellus at urna condimentum mattis. Id porta nibh venenatis cras sed felis eget velit. Mauris pharetra et ultrices neque ornare aenean. Dolor magna eget est lorem ipsum dolor sit. Laoreet suspendisse interdum consectetur libero id faucibus. Ipsum dolor sit amet consectetur adipiscing elit ut. Scelerisque varius morbi enim nunc faucibus a pellentesque sit. Libero volutpat sed cras ornare arcu dui vivamus. Egestas purus viverra accumsan in nisl nisi scelerisque eu ultrices. Sit amet dictum sit amet justo donec enim diam. Sit amet luctus venenatis lectus.")
+function news({posts}) {
+    // const [para,setPar]=useState("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mi ipsum faucibus vitae .")
+      console.log(posts,"here")
+      axios.get("http://localhost:1337/api/posts").then((response)=>{console.log(response.data.data)})
+
   return (
     <div>
-      
-
-        <div className=" pt-2 pb-2 h1 mb-3 text-center text-white container-fluid" style={{backgroundColor:"#6610F2"}}>
-        <span className='blog-name-contact'>Category</span> ||
-       <i className='getInTouch'> Sport</i>
-     </div>
-
+        
+    <NewsFeedHeader />
+   
     <NavBar />
     <div className='mt-4 container' style={{borderBottom:'1px solid lightgrey'}}></div>
     <section className='container mt-4'>
@@ -35,7 +38,7 @@ function news() {
 
        <p className='mt-3'>
 
-       <ReadMoreAndLess
+      {/* <ReadMoreAndLess
                
                 className="read-more-content"
                 charLimit={250}
@@ -44,7 +47,7 @@ function news() {
                 readLessStyle={"bg-info"}
             >
                 {para}
-            </ReadMoreAndLess>
+  </ReadMoreAndLess>*/}
           
        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mi ipsum faucibus vitae aliquet nec. Facilisis sed odio morbi quis. In eu mi bibendum neque egestas congue quisque egestas. Ultricies lacus sed turpis tincidunt id aliquet risus feugiat in. Rutrum tellus pellentesque eu tincidunt tortor aliquam nulla. Id velit ut tortor pretium viverra suspendisse. Massa eget egestas purus viverra accumsan in nisl nisi scelerisque. Massa tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada proin. Eget duis at tellus at urna condimentum mattis. Id porta nibh venenatis cras sed felis eget velit. Mauris pharetra et ultrices neque ornare aenean. Dolor magna eget est lorem ipsum dolor sit. Laoreet suspendisse interdum consectetur libero id faucibus. Ipsum dolor sit amet consectetur adipiscing elit ut. Scelerisque varius morbi enim nunc faucibus a pellentesque sit. Libero volutpat sed cras ornare arcu dui vivamus. Egestas purus viverra accumsan in nisl nisi scelerisque eu ultrices. Sit amet dictum sit amet justo donec enim diam. Sit amet luctus venenatis lectus.
      <br /> <br />
@@ -60,109 +63,13 @@ function news() {
      
      </div>
 
-     <div className='col-lg-4 col-md-5'>
-        <h3>News Reactions:</h3>
-
-        <div class="card  card-width">
-    
+     <div className='col-lg-4 col-md-5 mt-3'>
+        <h5>News Reactions:</h5>
+          <NewsComments />
        
-        <div className='text-center text-muted  card-text mr-0' >
-         
-        
-        </div>
-         <div className='card-header text-center'>
-         <section className='row'>
-       
-         <div className='col-5'>
-         <span className='' style={{backgroundColor:"whitesmoke"}}><i class="bi bi-hand-thumbs-up"></i> Like
-         <span className="badge badge-info">10</span></span>
-       </div>
-       <div className='col-7 '>
-    
-        <span className='' style={{backgroundColor:"whitesmoke"}}>
-        <i class="bi bi-chat-left"></i> 
-        <span> Comment</span><span className="badge badge-info">10</span>
-        </span>
-     </div>
-      
-         </section>
-         </div>
-        <div class="card-body mt-1">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-         
-        </div>
-      
-       <div className='card-footer'>
-       
-       
-
-       <div className="input-group">
-       <input
-         type="text"
-         placeholder="Enter Your Mail"
-         name="text"
-         className="form-control"
-       />
-       <div className="input-group-append">
-         <i className="bi bi-send btn btn-info"></i>
-       </div>
-     </div>
-       
-       </div>
-      </div>
-
       <h3 className='mt-5'>Related news:-</h3>
-
-      <div>
+        <RelatedNews />
       
-      <div className='pb-2 mt-3' style={{display:'flex',borderBottom:'1px solid grey'}}>
-         <div className=''>
-         <Link href='/'><a>BREAKING: Nigerian Women Team, Super Falcons Boycotts Training Over Unpaid Bonuses</a></Link>
-         </div>
-         <div className=''>
-           <Image src={instag} width={300} height={200} />
-         </div>
-      </div>
-
-      <div className='pb-2 mt-3' style={{display:'flex',borderBottom:'1px solid grey'}}>
-      <div className=''>
-      <Link href='/'><a>BREAKING: Nigerian Women Team, Super Falcons Boycotts Training Over Unpaid Bonuses</a></Link>
-      </div>
-      <div className=''>
-        <Image src={instag} width={300} height={200} />
-      </div>
-   </div>
-
-   <div className='pb-2 mt-3' style={{display:'flex',borderBottom:'1px solid grey'}}>
-      <div className=''>
-      <Link href='/'><a>BREAKING: Nigerian Women Team, Super Falcons Boycotts Training Over Unpaid Bonuses</a></Link>
-      </div>
-      <div className=''>
-        <Image src={instag} width={300} height={200} />
-      </div>
-   </div>
-
-   <div className='pb-2 mt-3' style={{display:'flex',borderBottom:'1px solid grey'}}>
-      <div className=''>
-      <Link href='/'><a>BREAKING: Nigerian Women Team, Super Falcons Boycotts Training Over Unpaid Bonuses</a></Link>
-      </div>
-      <div className=''>
-        <Image src={instag} width={300} height={200} />
-      </div>
-   </div>
-
-   <div className='pb-2 mt-3' style={{display:'flex',borderBottom:'1px solid grey'}}>
-      <div className=''>
-      <Link href='/'><a>BREAKING: Nigerian Women Team, Super Falcons Boycotts Training Over Unpaid Bonuses</a></Link>
-      </div>
-      <div className=''>
-        <Image src={instag} width={300} height={200} />
-      </div>
-   </div>
-   
-
-      </div>
      </div>
      
      </aisde>
@@ -171,10 +78,23 @@ function news() {
     </section>
 
     <div className='mt-5'></div>
-    
-    <Footer/>
     </div>
   )
 }
 
 export default news
+
+export async function getServerSideProps(){
+  
+  const response= await fetch("http://localhost:1337/api/posts")
+  const dataPost = await response.json()
+  // console.log(dataPost.data)
+
+  return{
+    props:{
+       posts:dataPost.data
+    }
+  }
+
+
+}

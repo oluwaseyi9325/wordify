@@ -7,7 +7,7 @@ import Carousel from "../Component/Carousel";
 import React, { useState, useEffect } from "react";
 import NewsFeed from "../Component/NewsFeed";
 
-export default function Home() {
+export default function Home({posts}) {
   return (
     <React.Fragment>
       <HeaderSection />
@@ -30,10 +30,26 @@ export default function Home() {
       </section>
 
       <section className="container">
-        <NewsFeed />
+        <h1>Latest news:</h1>
+        <NewsFeed posts={posts} />
       </section>
 
-      <Footer />
+   
     </React.Fragment>
   );
+}
+
+export async function getServerSideProps(){
+  
+  const response= await fetch("http://localhost:1337/api/posts")
+  const dataPost = await response.json()
+  console.log(dataPost.data)
+
+  return{
+    props:{
+       posts:dataPost.data
+    }
+  }
+
+
 }
