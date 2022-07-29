@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 function NavBar() {
   const { asPath } = useRouter();
+  const routes=useRouter()
   const [getRoute, setGetRoute] = useState("");
   useEffect(() => {
     setGetRoute(asPath);
@@ -59,19 +60,20 @@ function NavBar() {
             </a>
 
             <ul id="dropdownBorder" className="dropdown-menu  shadow animate__animated animate__fadeInDown" aria-labelledby="dropdownMenuLink">
-            <li id="dropdownItem" className="dropdown-item">
-            <Link href="/category/Sport" >
-              <a >Sport</a>
-            </Link>
+            <li id="dropdownItem" className="dropdown-item" >
+           <Link href="/category/Sport">
+              <a>Sport</a>
+  </Link>
+           
           </li> 
               <li id="dropdownItem" className="dropdown-item">
-              <Link href="/category/politics" >
-                <a >Politics</a>
+              <Link href="/category/Politics" >
+                <a>Politics</a>
               </Link>
             </li>
             <li id="" className="dropdown-item">
-            <Link href="/category/education" >
-              <a >Education</a>
+            <Link href="/category/Education" >
+              <a>Education</a>
             </Link>
           </li>
             </ul>

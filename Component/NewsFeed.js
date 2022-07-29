@@ -4,28 +4,60 @@ import instag from "/aseet/img1.jpg";
 import int from "/aseet/img2.jpg";
 import inst from "/aseet/img3.jpg";
 import Link from "next/link";
-function NewsFeed({posts}) {
-    console.log(posts,"feed")
-    if (!posts) {
+import useSWR from "swr";
+import { useRouter } from "next/router";
+// import { Router } from "react-router-dom";
+function NewsFeed({dataList}) {
+   
+    if (!dataList) {
         <h1>loading....</h1>
     }
+    const { data, error,mutate } = useSWR(`https://newsimefy.herokuapp.com/items`,
+  
+  {
+    // revalidateOnFocus:false,
+    // refreshInterval:1000,
+    
+  }  )
+  const routes=useRouter()
+
+  if(error) return (
+    <div className="text-center mt-5 mb-5">
+      <div className="" >
+         <span  className="spinner-border text-warning spinner-border-lg" ></span>
+      </div>
+       <div className="mt-3 mb-4 text-muted">
+         <i>An error occur, please contact the admin !!!</i>
+       </div>
+      </div>
+  )
+  if(!data) return (
+    <div className="text-center mt-5 mb-5">
+      <div className="" >
+         <span  className="spinner-border text-warning spinner-border-lg" ></span>
+      </div>
+       <div className="mt-3 mb-4 text-muted">
+         <i>Processing....</i>
+       </div>
+      </div>
+  )
     
   return (
     <div className="mb-5">
       <div className="row ml-">
          
         {
-        posts.map((val,i)=>{
+        data.map((val,i)=>{
                 return(
-                    <div className="col-lg-3 col-md-6 col-sm-6 mt-5 box">
+                    <div className="col-lg-3 col-md-6 col-sm-6 mt-5 box" onClick={()=>routes.push(`/news?description=${val.description}`)}>
                     <div className="card shadow card-width">
-                      <Image
+                     <Image
                         className="card-img-top"
-                        src={require(`../aseet/img${i+1}.jpg`)}
-                        alt="card img"
+                        src={val.imgUrl}
+                       
                         width={200}
                         height={160}
-                      />
+                />
                       <div
                         className="text-center text-muted  card-text mr-0"
                         style={{ marginTop: "-30px" }}
@@ -54,12 +86,11 @@ function NewsFeed({posts}) {
                       </div>
           
                       <div className="card-body mt-1">
-                        <h5 className="card-title">Sport</h5>
+                        <h5 className="card-title">{val.category}</h5>
                         <p className="card-text ">
                           <Link href="/">
                             <a>
-                              BREAKING: Nigerian Women Team, Super Falcons Boycotts
-                              Training Over Unpaid Bonuses Ahead Of ....
+                             {val.description}
                             </a>
                           </Link>
                         </p>
@@ -92,4 +123,15 @@ function NewsFeed({posts}) {
 }
 
 export default NewsFeed;
+
+export async function getStaticProps(){
+  const response = await fetch(`https://newsimefy.herokuapp.com/items`)
+  const data =await response.json()
+
+  return{
+      props:{
+          dataList:data
+      }
+  }
+}
 

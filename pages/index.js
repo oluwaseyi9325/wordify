@@ -6,8 +6,11 @@ import Footer from "../Component/Footer";
 import Carousel from "../Component/Carousel";
 import React, { useState, useEffect } from "react";
 import NewsFeed from "../Component/NewsFeed";
+import NewsSec from "./category/[NewsSec]"
+import LatestNews from "../Component/LatestNews"
 
-export default function Home({posts}) {
+export default function Home() {
+  console.log(process.env.postUrl)
   return (
     <React.Fragment>
       <HeaderSection />
@@ -30,8 +33,13 @@ export default function Home({posts}) {
       </section>
 
       <section className="container">
-        <h1>Latest news:</h1>
-        <NewsFeed posts={posts} />
+      <h2>Latest News:</h2>
+        <LatestNews/>
+      </section>
+
+      <section className="container">
+        <h2>News Feed:</h2>
+        <NewsFeed />
       </section>
 
    
@@ -39,17 +47,18 @@ export default function Home({posts}) {
   );
 }
 
-export async function getServerSideProps(){
+// export async function getServerSideProps(){
   
-  const response= await fetch("http://localhost:1337/api/posts")
-  const dataPost = await response.json()
-  console.log(dataPost.data)
+//   const response= await fetch("http://localhost:1337/api/posts")
+//   const dataPost = await response.json()
+//   // console.log(dataPost.data)
 
-  return{
-    props:{
-       posts:dataPost.data
-    }
-  }
+//   return{
+//     props:{
+//        posts:dataPost.data
+//     }
+//   }
 
 
-}
+// }
+

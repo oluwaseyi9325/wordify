@@ -15,13 +15,12 @@ const [eve,setEve]=useState(posts)
 const routes = useRouter()
     const btn=()=>{
 
-         
-        axios.get(`http://localhost:1337/api/posts?filters[title][$eq]=Sport`).then((response)=>{
+        axios.get(`http://localhost:1337/api/posts?filters[title][$eq]=Politics`).then((response)=>{
             setEve(response.data.data)
             // console.log(response.data.data)
         }).catch(err=>console.log('sorry'))
   
-        routes.push(`/category/${par}?filters[title][$eq]=Sport`,undefined, {shallow:true})
+        routes.push(`/category/seyi?filters[title][$eq]=Politics`,undefined, {shallow:true})
 
 
 
@@ -109,18 +108,17 @@ const routes = useRouter()
 export default CategoryNews;
 
 export async function getServerSideProps(context){
-    const {query,params}=context;
-    const { cate }= query;
-    const getEverything= cate? `?filters[title][$eq]=${params.category}`:''
-    const response= await fetch(`http://localhost:1337/api/posts${getEverything}`)
-    const dataPost = await response.json()
-    // console.log(dataPost.data)
-    console.log(cate)
-  
+    const {query}=context;
+  const {Politics}= query;
+  let Pol="filters[title][$eq]"
+  const getEverything= Politics? `${Pol}=${Politics}`:''
+  const response = await fetch(`http://localhost:1337/api/posts?${getEverything}`)
+    // console.log(category,query)
+  const dataPost= await response.json()
     return{
       props:{
          posts:dataPost.data,
-         par:params.category
+        
       }
     }
   

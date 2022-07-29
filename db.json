@@ -1,0 +1,118 @@
+{
+  "details": [
+    {
+      "category": "Sport",
+      "description": "Messi mesi",
+      "body": "ajfhsjhfs ajfakfsf safkjjsfa faskfa",
+      "imgUrl": "https://images.unsplash.com/photo-1553524082-82690780f842?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8bWVzc2l8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+      "id": 13
+    },
+    {
+      "category": "Education",
+      "description": "Bok is good: Please read it now now nw now!",
+      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "imgUrl": "https://images.unsplash.com/photo-1586196877083-6a4e8a995cf1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=666&q=80",
+      "id": 14
+    }
+  ],
+  "commets": [
+    {
+      "postId": 2,
+      "id": 3,
+      "message": "no no no no"
+    },
+    {
+      "postId": 8,
+      "message": "Hhhhh",
+      "id": 4
+    },
+    {
+      "postId": 8,
+      "message": "Hhhhh",
+      "id": 5
+    },
+    {
+      "postId": 8,
+      "message": "k",
+      "id": 7
+    },
+    {
+      "postId": 9,
+      "message": "hello",
+      "id": 8
+    },
+    {
+      "postId": 9,
+      "message": "hello",
+      "id": 9
+    },
+    {
+      "postId": 9,
+      "message": "hello",
+      "id": 10
+    },
+    {
+      "postId": 9,
+      "message": "kkk",
+      "id": 11
+    },
+    {
+      "postId": 9,
+      "message": "kkk",
+      "id": 12
+    },
+    {
+      "postId": 9,
+      "message": "kkk",
+      "id": 13
+    },
+    {
+      "postId": 9,
+      "message": "kkk",
+      "id": 14
+    },
+    {
+      "postId": 6,
+      "message": "dfddfds",
+      "id": 15
+    },
+    {
+      "postId": 6,
+      "message": "jhj",
+      "id": 22
+    },
+    {
+      "postId": 5,
+      "message": "Hhhhh",
+      "id": 23
+    },
+    {
+      "postId": 5,
+      "message": "Hhhhh",
+      "id": 24
+    },
+    {
+      "postId": 5,
+      "message": "seyu",
+      "id": 25
+    },
+    {
+      "postId": 5,
+      "message": "seyu",
+      "id": 26
+    },
+    {
+      "postId": 12,
+      "message": "heynow",
+      "id": 30
+    },
+    {
+      "postId": 12,
+      "message": "seyi",
+      "id": 31
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

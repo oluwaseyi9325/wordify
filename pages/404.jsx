@@ -3,9 +3,9 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 function PageNotFound() {
     const getRouter=useRouter()
-    // setTimeout(()=>{
-    //     getRouter.push('/')
-    // },3000)
+    setTimeout(()=>{
+        getRouter.push('/')
+    },3000)
   return (
     <div>
     

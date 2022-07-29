@@ -3,10 +3,13 @@ import "../styles/globals.css";
 import { AppProps } from "next/app";
 import Footer from "../Component/Footer";
 import NavBar from "../Component/NavBar";
-// import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
 // import 'bootstrap/dist/js/bootstrap.min.js'
+import { SWRConfig } from "swr";
+import axios from "axios";
 
 export default function MyApp({ Component, pageProps }) {
+  const fetcher=url=>axios.get(url).then(response=>response.data)
   if (Component.getLayout) {
     return Component.getLayout(
     
@@ -86,7 +89,9 @@ export default function MyApp({ Component, pageProps }) {
         ></link>
       </Head>
 
-      <Component {...pageProps} />
+        <SWRConfig value={{fetcher:fetcher}}>
+        <Component {...pageProps} />
+        </SWRConfig>
       <Footer />
     </>
   );

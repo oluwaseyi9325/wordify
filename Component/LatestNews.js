@@ -1,50 +1,64 @@
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
 import instag from "/aseet/img1.jpg";
 import int from "/aseet/img2.jpg";
 import inst from "/aseet/img3.jpg";
 import Link from "next/link";
-import axios from 'axios'
-import {useRouter} from 'next/router'
-function NewsSec({posts}) {
-    console.log(posts,"feed")
-    if (!posts) {
+import useSWR from "swr";
+import { useRouter } from "next/router";
+// import { Router } from "react-router-dom";
+function LatestNews({dataList}) {
+   
+    if (!dataList) {
         <h1>loading....</h1>
     }
-const [eve,setEve]=useState(posts)
-const routes = useRouter()
-    const btn=()=>{
-
-         
-        axios.get(`http://localhost:1337/api/posts?filters[title][$eq]=Sport`).then((response)=>{
-            setEve(response.data.data)
-            // console.log(response.data.data)
-        }).catch(err=>console.log('sorry'))
+    const pp=process.env.port
+    const { data, error,mutate } = useSWR(`https://newsimefy.herokuapp.com/items?_sort=id&_order=desc`,
   
-        routes.push(`/NewsSec?filters[title][$eq]=Sport`,undefined, {shallow:true})
+  {
+    // revalidateOnFocus:false,
+    // refreshInterval:1000,
+    
+  }  )
+  const routes=useRouter()
 
-
-
-    }
+  if(error) return (
+    <div className="text-center mt-5 mb-5">
+      <div className="" >
+         <span  className="spinner-border text-warning spinner-border-lg" ></span>
+      </div>
+       <div className="mt-3 mb-4 text-muted">
+         <i>An error occur, please contact the admin !!!</i>
+       </div>
+      </div>
+  )
+  if(!data) return (
+    <div className="text-center mt-5 mb-5">
+      <div className="" >
+         <span  className="spinner-border text-warning spinner-border-lg" ></span>
+      </div>
+       <div className="mt-3 mb-4 text-muted">
+         <i>Processing....</i>
+       </div>
+      </div>
+  )
     
   return (
     <div className="mb-5">
-    <button className="btn btn-info" onClick={()=>btn()}></button>
       <div className="row ml-">
-     
          
         {
-        eve.map((val,i)=>{
+        data.slice(0,4).map((val,i)=>{
                 return(
-                    <div className="col-lg-3 col-md-6 col-sm-6 mt-5 box">
+                    <div className="col-lg-3 col-md-6 col-sm-6 mt-5 box" onClick={()=>routes.push(`/news?description=${val.description}`)}>
                     <div className="card shadow card-width">
-                      <Image
+                     <Image
                         className="card-img-top"
-                        src={require(`../aseet/img${i+1}.jpg`)}
+                        src={val.imgUrl}
                         alt="card img"
                         width={200}
                         height={160}
-                      />
+                />
                       <div
                         className="text-center text-muted  card-text mr-0"
                         style={{ marginTop: "-30px" }}
@@ -73,12 +87,11 @@ const routes = useRouter()
                       </div>
           
                       <div className="card-body mt-1">
-                        <h5 className="card-title">Sport</h5>
+                        <h5 className="card-title">{val.category}</h5>
                         <p className="card-text ">
-                          <Link href={``}>
+                          <Link href="/">
                             <a>
-                              BREAKING: Nigerian Women Team, Super Falcons Boycotts
-                              Training Over Unpaid Bonuses Ahead Of ....
+                             {val.description}
                             </a>
                           </Link>
                         </p>
@@ -110,25 +123,16 @@ const routes = useRouter()
   );
 }
 
-export default NewsSec;
+export default LatestNews;
 
-export async function getServerSideProps(context){
-    const {query}=context;
-    const { category }= query;
-    const getEverything= category? "?filters[title][$eq]=Sport":''
-    const response= await fetch(`http://localhost:1337/api/posts${getEverything}`)
-    const dataPost = await response.json()
-    
-    // console.log(category)
-  
-    return{
+export async function getStaticProps(){
+  const response = await fetch(`https://newsimefy.herokuapp.com/items`)
+  const data =await response.json()
+
+  return{
       props:{
-         posts:dataPost.data
+          dataList:data
       }
-    }
-  
-  
   }
-
-
+}
 
