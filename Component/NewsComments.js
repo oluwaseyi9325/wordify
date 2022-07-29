@@ -1,10 +1,10 @@
 import axios from "axios";
 import React, { useState } from "react";
 import useSWR from "swr";
-import { useAutoAnimate } from '@formkit/auto-animate/react'
+
 
 function NewsComments({postId}) {
-  const [animationParent] = useAutoAnimate(); 
+ 
   const[writeCommets,setWriteCommet]=useState("")
   const [hideComments, setHideComments] = useState(false);
   const [hideText, setHideText] = useState("Show ▼");
@@ -90,7 +90,7 @@ function NewsComments({postId}) {
         </h5>
 
         {hideComments && (
-          <div className="" ref={animationParent}>
+          <div className="" >
             {
               data.map((val,i)=>{
                 return(

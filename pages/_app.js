@@ -3,18 +3,27 @@ import "../styles/globals.css";
 import { AppProps } from "next/app";
 import Footer from "../Component/Footer";
 import NavBar from "../Component/NavBar";
-import 'bootstrap/dist/css/bootstrap.min.css'
+// import 'bootstrap/dist/css/bootstrap.min.css'
 // import 'bootstrap/dist/js/bootstrap.min.js'
 import { SWRConfig } from "swr";
 import axios from "axios";
+import React from "react";
 
 export default function MyApp({ Component, pageProps }) {
   const fetcher=url=>axios.get(url).then(response=>response.data)
   if (Component.getLayout) {
     return Component.getLayout(
-    
+    <React.Fragment>
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossOrigin="anonymous"
+></link> 
+<Component {...pageProps} />
+    </React.Fragment>
       
-      <Component {...pageProps} />
+     
       
       )
     
