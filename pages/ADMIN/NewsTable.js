@@ -7,7 +7,7 @@ import Layout from './LayoutFile/layout'
 
 
 function NewsTable() {
-    const {data,error,mutate}=useSWR("https://newsimefy.herokuapp.com/items",{  revalidateOnFocus:false,})
+    const {data,error,mutate}=useSWR("https://newsimefy.herokuapp.com/items")
     if(error) return (
         <div className="text-center mt-5 mb-5">
           <div className="" >
