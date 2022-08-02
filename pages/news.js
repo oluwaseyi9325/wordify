@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState ,useRef} from 'react'
 import Link from 'next/link'
 import Footer from '../Component/Footer'
 import NavBar from '../Component/NavBar'
@@ -12,16 +12,29 @@ import RelatedNews from '../Component/RelatedNews'
 import NewsComments from '../Component/NewsComments'
 import axios from 'axios'
 // import { json } from 'stream/consumers'
+import Head from 'next/head'
+
 
 function news({dataList}) {
   const[NewsSec,setNewsSec]=useState(dataList[0].category)
   const[postId,setPostId]=useState(dataList[0].id)
     // const [para,setPar]=useState("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mi ipsum faucibus vitae .")
       // console.log(posts,"here")
-      
-     
+      const [descr,setDescr]=useState('')
+      const ref=useRef("")
+    useEffect(()=>{
+      setDescr(ref.current)
+      console.log(descr)
+    },[])
   return (
     <div>
+
+      <Head>
+      <meta name='description'  content={`${dataList[0].description}`} />
+      <title>Newsimefy</title>
+      
+      
+      </Head>
         
     <NewsFeedHeader NewsSec={NewsSec}  />
     
@@ -37,7 +50,7 @@ function news({dataList}) {
       dataList.map((val)=>{
        return(
         <div>
-        <h2>{val.description}</h2>
+        <h2 ref={ref}>{val.description}</h2>
         <div>
         <Image src={val.imgUrl} height={400} width={800} />
        
