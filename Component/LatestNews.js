@@ -13,7 +13,7 @@ function LatestNews({dataList}) {
         <h1>loading....</h1>
     }
     const pp=process.env.port
-    const { data, error,mutate } = useSWR(`https://newsimefy.herokuapp.com/items?_sort=id&_order=desc`,
+    const { data, error,mutate } = useSWR(`https://newsimefy.onrender.com/items?_sort=id&_order=desc`,
   
   {
     // revalidateOnFocus:false,
@@ -126,7 +126,7 @@ function LatestNews({dataList}) {
 export default LatestNews;
 
 export async function getStaticProps(){
-  const response = await fetch(`https://newsimefy.herokuapp.com/items`)
+  const response = await fetch(`https://newsimefy.onrender.com/items`)
   const data =await response.json()
 
   return{

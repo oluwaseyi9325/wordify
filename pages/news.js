@@ -112,7 +112,7 @@ export async function getServerSideProps(context){
   const {query} = context;
   const {description}=query;
   const getQuery= description? `description=${description.replace(/ /g,"%20")}`:""
-  const response = await fetch(`https://newsimefy.herokuapp.com/items?${getQuery}`)
+  const response = await fetch(`https://newsimefy.onrender.com/items?${getQuery}`)
   const data =await response.json()
   console.log(getQuery)
   return{

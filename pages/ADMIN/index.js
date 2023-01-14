@@ -13,7 +13,7 @@ function Admin() {
 
   const publishBtn = () => {
     if (category && description && body && imgUrl) {
-      axios.post("https://newsimefy.herokuapp.com/items", {
+      axios.post("https://newsimefy.onrender.com/items", {
         category: category,
         description: description,
         body: body,

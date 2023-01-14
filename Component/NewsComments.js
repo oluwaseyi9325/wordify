@@ -12,7 +12,7 @@ function NewsComments({postId}) {
     setHideComments(!hideComments ? true : false);
     setHideText(!hideComments ? "Hide ▲" : "Show ▼");
   };
-  const { data, error,mutate } = useSWR(`https://newsimefy.herokuapp.com/brands?postId=${postId}`,
+  const { data, error,mutate } = useSWR(`https://newsimefy.onrender.com/brands?postId=${postId}`,
   
   {
     // revalidateOnFocus:false,
@@ -42,7 +42,7 @@ function NewsComments({postId}) {
   )
 
   const sendCommets=()=>{
-    axios.post(`https://newsimefy.herokuapp.com/brands`,{
+    axios.post(`https://newsimefy.onrender.com/brands`,{
       
       "postId":postId,
       "message":writeCommets
@@ -53,7 +53,7 @@ function NewsComments({postId}) {
   }
 
   const deleteComments=(commentsIndex)=>{
-    axios.delete(`https://newsimefy.herokuapp.com/brands/${commentsIndex}`)
+    axios.delete(`https://newsimefy.onrender.com/brands/${commentsIndex}`)
     mutate()
   }
   

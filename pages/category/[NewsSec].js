@@ -151,7 +151,7 @@ export async function getServerSideProps(context){
   const {category}=query;
   const {NewsSec}=params;
   const getQuery= category? `category=${NewsSec}`:''
-  const response = await fetch(`https://newsimefy.herokuapp.com/items?category=${NewsSec}`)
+  const response = await fetch(`https://newsimefy.onrender.com/items?category=${NewsSec}`)
   const data =await response.json()
 console.log(NewsSec)
 

@@ -5,7 +5,7 @@ import instag from '../aseet/img1.jpg'
 import useSWR from 'swr'
 
 function RelatedNews({NewsSec}) {
-  const{data,error}=useSWR(`https://newsimefy.herokuapp.com/items?category=${NewsSec}`,{  revalidateOnFocus:false,})
+  const{data,error}=useSWR(`https://newsimefy.onrender.com/items?category=${NewsSec}`,{  revalidateOnFocus:false,})
   if(error) return (
     <div className="text-center mt-5 mb-5">
       <div className="" >

@@ -12,7 +12,7 @@ function NewsFeed({dataList}) {
     if (!dataList) {
         <h1>loading....</h1>
     }
-    const { data, error,mutate } = useSWR(`https://newsimefy.herokuapp.com/items`,
+    const { data, error,mutate } = useSWR(`https://newsimefy.onrender.com/items`,
   
   {
     // revalidateOnFocus:false,
@@ -125,7 +125,7 @@ function NewsFeed({dataList}) {
 export default NewsFeed;
 
 export async function getStaticProps(){
-  const response = await fetch(`https://newsimefy.herokuapp.com/items`)
+  const response = await fetch(`https://newsimefy.onrender.com/items`)
   const data =await response.json()
 
   return{

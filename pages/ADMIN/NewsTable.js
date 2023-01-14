@@ -7,7 +7,7 @@ import Layout from './LayoutFile/layout'
 
 
 function NewsTable() {
-    const {data,error,mutate}=useSWR("https://newsimefy.herokuapp.com/items")
+    const {data,error,mutate}=useSWR("https://newsimefy.onrender.com/items")
     if(error) return (
         <div className="text-center mt-5 mb-5">
           <div className="" >
@@ -30,7 +30,7 @@ function NewsTable() {
       </div>
   )
    const delBtn=(delIndex)=>{
-    axios.delete(`https://newsimefy.herokuapp.com/items/${delIndex}`)
+    axios.delete(`https://newsimefy.onrender.com/items/${delIndex}`)
     mutate()
    }
   return (
